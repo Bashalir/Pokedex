@@ -1,0 +1,79 @@
+/* Remove default padding */
+ol[class],
+ul[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+blockquote,
+body,
+dd,
+dl,
+figcaption,
+figure,
+h1,
+h2,
+h3,
+h4,
+li,
+ol[class],
+p,
+ul[class] {
+  margin: 0;
+}
+
+:root {
+  --positionCard: 0%;
+}
+
+.listCard {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 10px;
+  position: relative;
+  width: 650px;
+  height: 125px;
+  overflow: hidden;
+}
+
+.card {
+  font-family: "VT323", monospace;
+  border: 1px solid #dcdcdc;
+  display: flex;
+  height: 100px;
+  width: 100px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.card {
+  transform: translateX(var(--positionCard));
+  transition: transform 800ms ease-in-out;
+}
+
+.card > h2 {
+  padding-bottom: 10px;
+}
+
+.card > img {
+  object-fit: contain;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+}
+
+.zoom {
+  background-color: white;
+  transition: transform 0.2s;
+  /* Animation */
+  margin: 0 auto;
+}
+.zoom:hover {
+  transform: scale(1.5);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
